@@ -14,40 +14,46 @@ public class MyCalcTests {
 
     static final Logger log = LoggerFactory.getLogger(MyCalcTests.class);
 
+    // метод выполняется прежде ВСЕХ тестов
     @BeforeAll
     static void setUp(){
         log.info("\tBEFORE ALL TESTS =>");
     }
 
+    // метод выполняется после ВСЕХ тестов
     @AfterAll
     static void tearDown(){
         log.info("\tAFTER ALL TESTS =>");
     }
 
+    // метод выполняется перед каждым тестом
     @BeforeEach
     void setUpTest(){
         log.info("\t\tBEFORE ONE TEST");
     }
 
+    // метод выполняется после каждого теста
     @AfterEach
     void tearDownTest(){
         log.info("\t\tAFTER ONE TEST");
     }
 
-    @Disabled
+    //простейший тест, который проверяет работу функции сложения
     @Test
     void testAdd(){
         log.info("\t\t\tSTART WORK TEST");
 
-        int a = 2;
-        int b = 3;
+        int act_result = MyCalc.add(2, 3);
+        int exp_result = 5;
 
-        Assertions.assertEquals(5, MyCalc.add(a, b));
+        Assertions.assertEquals(exp_result, act_result);
 
         log.info("\t\t\tEND WORK TEST");
     }
 
-    @Disabled
+    // параметризированный тест
+    // проверяем метод возведения в степень
+    // параметры получаем из ValueSource
     @ParameterizedTest(name="#{index}- Test with Argument={arguments}")
     @ValueSource(doubles = {1, 2, 3, 4, 5})
     void testPow(double a){
@@ -56,14 +62,14 @@ public class MyCalcTests {
         double act_result = MyCalc.pow(a);
         double exp_result = Math.pow(2, a);
 
-        log.info(String.valueOf(act_result));
         Assertions.assertEquals(exp_result, act_result);
 
         log.info("\t\t\tEND WORK TEST");
     }
 
-
-    @Disabled
+    // параметризированный тест
+    // проверяем метод возведения в степень
+    // параметры получаем из CsvSource
     @ParameterizedTest(name="#{index}- Test with Argument={arguments}")
     @CsvSource({
             "0, 1",
@@ -73,16 +79,17 @@ public class MyCalcTests {
     void testMult(int a, int b){
         log.info("\t\t\tSTART WORK TEST");
 
-        double act_result = MyCalc.mult(a, b);
-        double exp_result = Math.multiplyFull(a, b);
+        long act_result = MyCalc.mult(a, b);
+        long exp_result = Math.multiplyFull(a, b);
 
         Assertions.assertEquals(exp_result, act_result);
 
         log.info("\t\t\tEND WORK TEST");
     }
 
-
-
+    // параметризированный тест
+    // проверяем метод разницы
+    // параметры получаем из MethodSource - в нем указан отдельный метод intProvider
     @ParameterizedTest(name="#{index}- Test with Argument={arguments}")
     @MethodSource("intProvider")
     void testSub(int[] vars){
@@ -91,14 +98,15 @@ public class MyCalcTests {
         int a = vars[0];
         int b = vars[1];
 
-        double act_result = MyCalc.sub(a, b);
-        double exp_result = Math.subtractExact(a, b);
+        long act_result = MyCalc.sub(a, b);
+        long exp_result = Math.subtractExact(a, b);
 
         Assertions.assertEquals(exp_result, act_result);
 
         log.info("\t\t\tEND WORK TEST");
     }
 
+    //метод в котором формитруются тестовые данные для теста testSub
     static ArrayList<int[]> intProvider() {
         log.info("\t\t\tSTART WORK intProvider");
 
@@ -113,6 +121,10 @@ public class MyCalcTests {
         return result;
     }
 
+    // параметризированный тест
+    // проверяем метод деления
+    // параметры получаем из CsvFileSource - в нем указан путь к отдельному файлу,
+    // который находится в папке test\resources
     @ParameterizedTest(name="#{index}- Test with Argument={arguments}")
     @CsvFileSource(resources = "/nums-data.csv", numLinesToSkip = 1)
     void testDiv(int a, int b){
