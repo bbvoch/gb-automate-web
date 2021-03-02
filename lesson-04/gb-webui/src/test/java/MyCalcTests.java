@@ -51,9 +51,65 @@ public class MyCalcTests {
         log.info("\t\t\tEND WORK TEST");
     }
 
+    //простейший тест, который проверяет работу функции сложения
+    @Disabled("Отключен для исправления дефекта")
+    @Test
+    void testAddNew(){
+        log.info("\t\t\tSTART WORK TEST");
+
+        int act_result = MyCalc.add(2, 3);
+        int exp_result = 5;
+
+        Assertions.assertEquals(exp_result, act_result);
+
+        log.info("\t\t\tEND WORK TEST");
+    }
+
+    //простейший тест, который проверяет работу функции сложения
+    //повтор 10
+    @DisplayName("Тест по проверке сложения")
+    @RepeatedTest(10)
+    void testAddRepeated(){
+        log.info("\t\t\tSTART WORK TEST");
+
+        int a = (int)(Math.random() * 100);
+        int b = (int)(Math.random() * 100);
+
+        int act_result = MyCalc.add(a,b);
+        int exp_result = a + b;
+
+        Assertions.assertEquals(exp_result, act_result);
+
+        log.info("\t\t\tEND WORK TEST");
+    }
+
+    //простейший тест, который проверяет работу функции сложения
+    //повтор 5
+    @DisplayName("Тест по проверке сложения")
+    @RepeatedTest(5)
+    void testAddWithAssume(){
+        log.info("\t\t\tSTART WORK TEST");
+
+        int random = (int)(Math.random() * 100);
+
+        Assumptions.assumeTrue(random > 50,
+                () -> "Тест пропускается потому что random < 50: random=" + random);
+
+        int a = (int)(Math.random() * 100);
+        int b = (int)(Math.random() * 100);
+
+        int act_result = MyCalc.add(a,b);
+        int exp_result = a + b;
+
+        Assertions.assertEquals(exp_result, act_result);
+
+        log.info("\t\t\tEND WORK TEST");
+    }
+
     // параметризированный тест
     // проверяем метод возведения в степень
     // параметры получаем из ValueSource
+    @DisplayName("Тест проверки возведения в степень")
     @ParameterizedTest(name="#{index}- Test with Argument={arguments}")
     @ValueSource(doubles = {1, 2, 3, 4, 5})
     void testPow(double a){
