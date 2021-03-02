@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="MyCalcTests" time="0.869" tests="6" errors="0" skipped="3" failures="3">
+  <properties>
+    <property name="java.specification.version" value="15"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\Akhodyrev\Documents\prj\gb-automate-web\lesson-04\gb-webui\target\test-classes;C:\Users\Akhodyrev\Documents\prj\gb-automate-web\lesson-04\gb-webui\target\classes;C:\Users\Akhodyrev\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.1\junit-jupiter-api-5.7.1.jar;C:\Users\Akhodyrev\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Akhodyrev\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Akhodyrev\.m2\repository\org\junit\platform\junit-platform-commons\1.7.1\junit-platform-commons-1.7.1.jar;C:\Users\Akhodyrev\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.1\junit-jupiter-engine-5.7.1.jar;C:\Users\Akhodyrev\.m2\repository\org\junit\platform\junit-platform-engine\1.7.1\junit-platform-engine-1.7.1.jar;C:\Users\Akhodyrev\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Akhodyrev\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Akhodyrev\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Akhodyrev\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.7.1\junit-jupiter-params-5.7.1.jar;"/>
+    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://www.azulsystems.com/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Users\Akhodyrev\.jdks\azul-15.0.2\bin"/>
+    <property name="sun.java.command" value="C:\Users\AKHODY~1\AppData\Local\Temp\surefire7570039468963648769\surefirebooter12906270945710385446.jar C:\Users\Akhodyrev\AppData\Local\Temp\surefire7570039468963648769 2021-03-02T14-24-30_529-jvmRun1 surefire10910333605567598125tmp surefire_05588325692677486346tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Akhodyrev\Documents\prj\gb-automate-web\lesson-04\gb-webui\target\test-classes;C:\Users\Akhodyrev\Documents\prj\gb-automate-web\lesson-04\gb-webui\target\classes;C:\Users\Akhodyrev\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.1\junit-jupiter-api-5.7.1.jar;C:\Users\Akhodyrev\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Akhodyrev\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Akhodyrev\.m2\repository\org\junit\platform\junit-platform-commons\1.7.1\junit-platform-commons-1.7.1.jar;C:\Users\Akhodyrev\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.1\junit-jupiter-engine-5.7.1.jar;C:\Users\Akhodyrev\.m2\repository\org\junit\platform\junit-platform-engine\1.7.1\junit-platform-engine-1.7.1.jar;C:\Users\Akhodyrev\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Akhodyrev\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Akhodyrev\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Akhodyrev\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.7.1\junit-jupiter-params-5.7.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Akhodyrev"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-01-19"/>
+    <property name="java.home" value="C:\Users\Akhodyrev\.jdks\azul-15.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Akhodyrev\Documents\prj\gb-automate-web\lesson-04\gb-webui"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\AKHODY~1\AppData\Local\Temp\surefire7570039468963648769\surefirebooter12906270945710385446.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="15.0.2+7"/>
+    <property name="user.name" value="AKhodyrev"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Zulu15.29+15-CA"/>
+    <property name="localRepository" value="C:\Users\Akhodyrev\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://www.azulsystems.com/support/"/>
+    <property name="java.io.tmpdir" value="C:\Users\AKHODY~1\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2020.3.2"/>
+    <property name="java.version" value="15.0.2"/>
+    <property name="user.dir" value="C:\Users\Akhodyrev\Documents\prj\gb-automate-web\lesson-04\gb-webui"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Users\Akhodyrev\.jdks\azul-15.0.2\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\Kaspersky Lab\Kaspersky Endpoint Security for Windows\;C:\Program Files\TortoiseHg\;C:\Program Files\Git\cmd;C:\Users\Akhodyrev\Documents\tools;c:\Users\Akhodyrev\Documents\tools\apache-maven-3.6.3\bin;C:\Users\Akhodyrev\.jdks\azul-15.0.2\bin;C:\Users\Akhodyrev\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA 2020.3\bin;;C:\Users\Akhodyrev\AppData\Local\Programs\Fiddler;C:\Users\Akhodyrev\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Azul Systems, Inc."/>
+    <property name="java.vm.version" value="15.0.2+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="59.0"/>
+  </properties>
+  <testcase name="testAdd" classname="MyCalcTests" time="0">
+    <skipped message="void MyCalcTests.testAdd() is @Disabled"/>
+    <system-out><![CDATA[14:24:33,489 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback-test.xml] at [file:/C:/Users/Akhodyrev/Documents/prj/gb-automate-web/lesson-04/gb-webui/target/test-classes/logback-test.xml]
+14:24:33,682 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+14:24:33,684 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+14:24:33,703 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [CONSOLE]
+14:24:33,798 |-WARN in ch.qos.logback.core.ConsoleAppender[CONSOLE] - This appender no longer admits a layout as a sub-component, set an encoder instead.
+14:24:33,798 |-WARN in ch.qos.logback.core.ConsoleAppender[CONSOLE] - To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.
+14:24:33,798 |-WARN in ch.qos.logback.core.ConsoleAppender[CONSOLE] - See also http://logback.qos.ch/codes.html#layoutInsteadOfEncoder for details
+14:24:33,799 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+14:24:33,799 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [CONSOLE] to Logger[ROOT]
+14:24:33,800 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+14:24:33,802 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@44a7bfbc - Registering current configuration as safe fallback point
+
+14:24:33.813 [main]  INFO  MyCalcTests - 	BEFORE ALL TESTS =>
+]]></system-out>
+  </testcase>
+  <testcase name="testDiv{int[]}[1]" classname="MyCalcTests" time="0.154">
+    <failure message="expected: &lt;-2.0&gt; but was: &lt;0.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <-2.0> but was: <0.0>
+	at MyCalcTests.testDiv(MyCalcTests.java:105)
+]]></failure>
+    <system-out><![CDATA[14:24:33.925 [main]  INFO  MyCalcTests - 			START WORK intProvider
+14:24:33.933 [main]  INFO  MyCalcTests - xx: 1
+14:24:33.933 [main]  INFO  MyCalcTests - xx: 3
+14:24:33.933 [main]  INFO  MyCalcTests - xx: 2
+14:24:33.934 [main]  INFO  MyCalcTests - xx: 5
+14:24:33.934 [main]  INFO  MyCalcTests - xx: 3
+14:24:33.934 [main]  INFO  MyCalcTests - xx: 7
+14:24:33.934 [main]  INFO  MyCalcTests - 			END WORK intProvider
+14:24:33.981 [main]  INFO  MyCalcTests - 		BEFORE ONE TEST
+14:24:34.045 [main]  INFO  MyCalcTests - 			START WORK TEST
+14:24:34.047 [main]  INFO  MyCalcTests - 			vars: [I@7d4f9aae
+14:24:34.047 [main]  INFO  MyCalcTests - x: 1
+14:24:34.048 [main]  INFO  MyCalcTests - x: 1
+14:24:34.048 [main]  INFO  MyCalcTests - x: 3
+14:24:34.048 [main]  INFO  MyCalcTests - x: 3
+14:24:34.093 [main]  INFO  MyCalcTests - 		AFTER ONE TEST
+]]></system-out>
+  </testcase>
+  <testcase name="testDiv{int[]}[2]" classname="MyCalcTests" time="0.018">
+    <failure message="expected: &lt;-3.0&gt; but was: &lt;0.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <-3.0> but was: <0.0>
+	at MyCalcTests.testDiv(MyCalcTests.java:105)
+]]></failure>
+    <system-out><![CDATA[14:24:34.119 [main]  INFO  MyCalcTests - 		BEFORE ONE TEST
+14:24:34.124 [main]  INFO  MyCalcTests - 			START WORK TEST
+14:24:34.125 [main]  INFO  MyCalcTests - 			vars: [I@2a7f1f10
+14:24:34.126 [main]  INFO  MyCalcTests - x: 2
+14:24:34.128 [main]  INFO  MyCalcTests - x: 2
+14:24:34.129 [main]  INFO  MyCalcTests - x: 5
+14:24:34.129 [main]  INFO  MyCalcTests - x: 5
+14:24:34.135 [main]  INFO  MyCalcTests - 		AFTER ONE TEST
+]]></system-out>
+  </testcase>
+  <testcase name="testDiv{int[]}[3]" classname="MyCalcTests" time="0.011">
+    <failure message="expected: &lt;-4.0&gt; but was: &lt;0.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <-4.0> but was: <0.0>
+	at MyCalcTests.testDiv(MyCalcTests.java:105)
+]]></failure>
+    <system-out><![CDATA[14:24:34.139 [main]  INFO  MyCalcTests - 		BEFORE ONE TEST
+14:24:34.141 [main]  INFO  MyCalcTests - 			START WORK TEST
+14:24:34.141 [main]  INFO  MyCalcTests - 			vars: [I@740cae06
+14:24:34.141 [main]  INFO  MyCalcTests - x: 3
+14:24:34.141 [main]  INFO  MyCalcTests - x: 3
+14:24:34.142 [main]  INFO  MyCalcTests - x: 7
+14:24:34.142 [main]  INFO  MyCalcTests - x: 7
+14:24:34.145 [main]  INFO  MyCalcTests - 		AFTER ONE TEST
+]]></system-out>
+  </testcase>
+  <testcase name="testSub{double}" classname="MyCalcTests" time="0">
+    <skipped message="void MyCalcTests.testSub(double) is @Disabled"/>
+  </testcase>
+  <testcase name="testMult{int, int}" classname="MyCalcTests" time="0">
+    <skipped message="void MyCalcTests.testMult(int,int) is @Disabled"/>
+  </testcase>
+</testsuite>
