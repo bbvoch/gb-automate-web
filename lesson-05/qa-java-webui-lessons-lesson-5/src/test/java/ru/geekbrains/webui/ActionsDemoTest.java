@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -34,6 +31,7 @@ class ActionsDemoTest {
     private final String STUDENT_LOGIN = "Applanatest";
     private final String STUDENT_PASSWORD = "Student2020!";
     private WebDriver driver;
+    private JavascriptExecutor jsExecutor;
 
     @BeforeAll
     public static void setupWebDriverManager() {
@@ -94,7 +92,6 @@ class ActionsDemoTest {
 
         //---------------------------------------------------------
         // Далее по коду без изменений кроме добавления Assert в конце
-
         WebDriverWait waitFiveSeconds = new WebDriverWait(driver, 5);
         waitFiveSeconds.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(
             "div[class='pull-left btn-group icons-holder']"))));
@@ -128,6 +125,11 @@ class ActionsDemoTest {
         Assertions.assertTrue(message.contains("Заявка на расход сохранена"));
     }
 
+    @Test
+    public void testLogin(){
+        login();
+    }
+
     private void login() {
         driver.get(LOGIN_PAGE_URL);
 
@@ -138,6 +140,9 @@ class ActionsDemoTest {
         passwordTextInput.sendKeys(STUDENT_PASSWORD);
 
         WebElement loginButton = driver.findElement(By.xpath(".//button[@name='_submit']"));
+
+        jsExecutor.executeScript("window.alert('I love Web Driver!')");
+
         loginButton.click();
     }
 
@@ -146,5 +151,6 @@ class ActionsDemoTest {
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        jsExecutor = (JavascriptExecutor) driver;
     }
 }

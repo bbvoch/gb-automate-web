@@ -21,7 +21,7 @@ public class JSExecutorTest {
         Продемонстрировать в консоли команды
 
         window.open()
-        window.open('https://google.com')
+        window.open('https://geekbrains.ru')
 
         window.scrollTo(0,document.body.scrollHeight) - скролл в самый низ
         window.scrollTo(0,0) - скролл в самый верх
@@ -33,8 +33,14 @@ public class JSExecutorTest {
     private final String LOGIN_PAGE_URL = "https://crm.geekbrains.space/user/login";
     private final String STUDENT_LOGIN = "Applanatest";
     private final String STUDENT_PASSWORD = "Student2020!";
+
+
     private WebDriver driver;
     private JavascriptExecutor jsExecutor;
+
+
+
+    private final int DELAY = 0;
 
     @BeforeAll
     public static void setupWebDriverManager() {
@@ -56,6 +62,14 @@ public class JSExecutorTest {
         }
     }
 
+    private void sleep(){
+        try {
+            Thread.sleep(DELAY);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Test
     public void openSite() {
         login();
@@ -63,7 +77,10 @@ public class JSExecutorTest {
 
     private void login() {
         driver.get(LOGIN_PAGE_URL);
-        WebElement loginTextInput = driver.findElement(By.cssSelector("input[id='prependedInput']"));
+
+        // WebElement loginTextInput = driver.findElement(By.cssSelector("input[id='prependedInput']"));
+        WebElement loginTextInput = (WebElement) jsExecutor
+                .executeScript("return document.getElementById('prependedInput')");
         loginTextInput.sendKeys(STUDENT_LOGIN);
 
         // Демонстрация jsExecutor: поиск элемента
@@ -76,6 +93,8 @@ public class JSExecutorTest {
 
         WebElement loginButton = driver.findElement(By.xpath(".//button[@name='_submit']"));
         loginButton.click();
+
+        sleep();
     }
 
     // Демонстрация переключения вкладок
@@ -85,7 +104,7 @@ public class JSExecutorTest {
 
         for (int i = 0; i < 2; i++) {
             jsExecutor.executeScript("window.open('https://ya.ru')");
-            Thread.sleep(1000);
+            Thread.sleep(3000);
             System.out.println(driver.getWindowHandles()); // вывод идентификаторов
         }
 
@@ -95,7 +114,7 @@ public class JSExecutorTest {
                 System.out.println(tab);
                 driver.switchTo().window(tab);
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

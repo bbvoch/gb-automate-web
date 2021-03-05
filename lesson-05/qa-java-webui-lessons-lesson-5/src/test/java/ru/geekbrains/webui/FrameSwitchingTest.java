@@ -6,9 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
@@ -32,6 +30,7 @@ public class FrameSwitchingTest {
 
     private final String BASE_URL = "https://www.w3schools.com/html/html_iframe.asp";
     private WebDriver driver;
+    private JavascriptExecutor jsExec;
 
     @BeforeAll
     public static void setupWebDriverManager() {
@@ -43,6 +42,7 @@ public class FrameSwitchingTest {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        jsExec = (JavascriptExecutor) driver;
     }
 
     @AfterEach
@@ -58,7 +58,7 @@ public class FrameSwitchingTest {
 
         // Поиск элемента
         List<WebElement> buttons = driver.findElements(By.xpath(
-            ".//a[@class='w3-bar-item w3-button w3-right' and contains(text(), 'CERTIFICATES')]")
+            ".//a[@class='w3-bar-item w3-button w3-right' and contains(text(), 'REFERENCES')]")
         );
 
         // Драйвер найдет один элемент
@@ -76,20 +76,51 @@ public class FrameSwitchingTest {
         driver.get(BASE_URL);
 
         // Переключение фокуса в первый найденный фрейм
-        driver.switchTo().frame(0);
+        WebElement frame = driver.findElement(By.xpath(".//iframe[@title='W3Schools HTML Tutorial']"));
+        driver.switchTo().frame(frame);
+        //driver.switchTo().frame(0);
 
         // Поиск элемента
-        WebElement certificatesButton = driver.findElement(By.xpath(
-            ".//a[@class='w3-bar-item w3-button w3-right' and contains(text(), 'CERTIFICATES')]")
+        WebElement sertificatesButton = driver.findElement(By.xpath(
+            ".//a[@class='w3-bar-item w3-button w3-right' and contains(text(), 'REFERENCES')]")
         );
 
-        Assertions.assertTrue(certificatesButton.isDisplayed());
+        Assertions.assertTrue(sertificatesButton.isDisplayed());
 
         // Кликнутый элемент был внутри требуемого фрейма
-        certificatesButton.click();
+        sertificatesButton.click();
 
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println(); // Поставить тут брейкпоинт для демонстрации
 
         driver.switchTo().defaultContent();  // или driver.switchTo().parentFrame() - возврат назад
+    }
+
+    @Test
+    public void testAlert(){
+        driver.get("https://ya.ru");
+        jsExec.executeScript("window.alert('I love Web Driver!')");
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Alert alert = driver.switchTo().alert();
+
+        System.out.println(">" + alert.getText());
+
+        alert.accept();
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -57,7 +57,9 @@ public class CookieTest {
 
     @Test
     public void testWithoutCookie() {
+        driver.manage().deleteAllCookies();
         driver.get(BASE_URL + TARGET_PAGE);
+
         WebElement promoBanner = driver.findElement(By.cssSelector(
             "div[data-testid='promocode-banner-container']")
         );
@@ -68,6 +70,7 @@ public class CookieTest {
     @Test
     public void testWithCookie() {
         // Переходим на страницу, для которой нужно посетить куки
+        driver.manage().deleteAllCookies();
         driver.get(BASE_URL);
 
         // Сеттим необходимые куки
@@ -80,6 +83,15 @@ public class CookieTest {
         List<WebElement> banners = driver.findElements(By.cssSelector(
             "div[data-testid='promocode-banner-container']")
         );
+
+        Cookie c = driver.manage().getCookieNamed("promo_code_showed");
+        System.out.println("1: " + c.getName());
+        System.out.println("2: " + c.getDomain());
+        System.out.println("3: " + c.getPath());
+        System.out.println("4: " + c.getValue());
+        System.out.println("5: " + c.getExpiry());
+
+
 
         // Проверяем что за 5 секунд неявного ожидания ни одного элемента не было найдено
         Assertions.assertEquals(0, banners.size());
