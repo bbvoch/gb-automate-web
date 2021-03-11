@@ -16,6 +16,15 @@ public class LoginPage extends BaseView {
     @FindBy(xpath = ".//button[@name='_submit']")
     private WebElement buttonSignIn;
 
+    @FindBy(xpath = "//input[@type='checkbox']")
+    private WebElement inputCheck;
+
+    public LoginPage ckeckYes(){
+        inputCheck.click();
+        return this;
+    }
+
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -34,6 +43,7 @@ public class LoginPage extends BaseView {
         buttonSignIn.click();
         return new HomePage(driver);
     }
+
 
     // Для использования в других тестах
     public HomePage authoriseScenario(String login, String password) {

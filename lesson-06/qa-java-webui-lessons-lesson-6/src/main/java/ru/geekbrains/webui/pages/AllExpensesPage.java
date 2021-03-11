@@ -14,6 +14,9 @@ public class AllExpensesPage extends BaseView {
     @FindBy(css = "div[class='pull-left btn-group icons-holder']")
     private WebElement createNewExpenseButton;
 
+    @FindBy(css = "div[class='pull-left btn-group icons-holder']")
+    private WebElement createNewBTExpenseButton;
+
     public AllExpensesPage(WebDriver driver) {
         super(driver);
     }

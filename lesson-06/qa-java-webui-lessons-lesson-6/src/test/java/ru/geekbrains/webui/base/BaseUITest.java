@@ -17,6 +17,8 @@ import static ru.geekbrains.webui.common.Configuration.LOGIN_PATH;
 public abstract class BaseUITest {
     protected WebDriver driver;
 
+
+
     @BeforeAll
     public static void setUp() {
         WebDriverManager.chromedriver().setup();

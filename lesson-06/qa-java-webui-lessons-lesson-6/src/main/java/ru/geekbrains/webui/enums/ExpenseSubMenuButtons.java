@@ -5,8 +5,8 @@ import ru.geekbrains.webui.base.SubMenuButtons;
 
 public enum ExpenseSubMenuButtons implements SubMenuButtons {
 
-    EXPENSE_REQUEST(".//span[@class='title' and text()='Заявки на расходы']");
-//    BUSINESS_TRIPS("TODO"),
+    EXPENSE_REQUEST(".//span[@class='title' and text()='Заявки на расходы']"),
+    BUSINESS_TRIPS(".//span[@class='title' and text()='Командировки']");
 //    CENTER_COSTS("TODO"),
 //    BUSINESS_CONTRACTS("TODO");
 

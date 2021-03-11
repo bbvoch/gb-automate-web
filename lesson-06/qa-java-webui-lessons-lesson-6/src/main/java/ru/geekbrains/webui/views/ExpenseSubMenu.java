@@ -20,6 +20,9 @@ public class ExpenseSubMenu extends SubMenu {
                 case EXPENSE_REQUEST:
                     driver.findElement(((ExpenseSubMenuButtons) buttons).getBy()).click();
                     return new AllExpensesPage(driver);
+                case BUSINESS_TRIPS:
+                    driver.findElement(((ExpenseSubMenuButtons) buttons).getBy()).click();
+                    return new AllExpensesPage(driver);
                 default:
                     throw new IllegalArgumentException("Not implemented yet");
             }

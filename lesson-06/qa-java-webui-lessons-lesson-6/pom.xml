@@ -19,7 +19,7 @@
         <hamcrest.version>2.2</hamcrest.version>
         <maven-surefire.version>2.22.2</maven-surefire.version>
         <allure-maven.version>2.10.0</allure-maven.version>
-        <aspectj.version>1.9.4</aspectj.version>
+        <aspectj.version>1.9.6</aspectj.version>
     </properties>
 
     <dependencies>
@@ -70,11 +70,13 @@
                     </argLine>
                 </configuration>
                 <dependencies>
+
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
                         <version>${aspectj.version}</version>
                     </dependency>
+
                 </dependencies>
             </plugin>
         </plugins>
