@@ -1,0 +1,262 @@
+{
+  "id": "f988ab85-bff4-40c5-9a8e-f4bef3c8e2da",
+  "version": "2.0",
+  "name": "CRM",
+  "url": "https://crm.geekbrains.space",
+  "tests": [{
+    "id": "48e30f0a-f6b4-4ca9-ae33-858ff85a961c",
+    "name": "Login",
+    "commands": [{
+      "id": "89cd0cb8-27e2-4b39-a55d-c6d2293a93de",
+      "comment": "Открыть страницу авторизации",
+      "command": "open",
+      "target": "/user/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06b33dc6-2e49-498f-a1c4-978f3bdf68ca",
+      "comment": "Ждём появления формы Логин",
+      "command": "waitForElementPresent",
+      "target": "xpath=//h2[@class='title']",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "8344f184-293a-4a4c-87b6-211ac9878993",
+      "comment": "Кликнуть в поле \"Имя пользователя или Email\"",
+      "command": "click",
+      "target": "id=prependedInput",
+      "targets": [
+        ["id=prependedInput", "id"],
+        ["name=_username", "name"],
+        ["css=#prependedInput", "css:finder"],
+        ["xpath=//input[@id='prependedInput']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a83cc6df-dba3-4f55-b636-1bda4d75226d",
+      "comment": "Ввести имя пользователя - Applanatest",
+      "command": "type",
+      "target": "id=prependedInput",
+      "targets": [],
+      "value": "Applanatest"
+    }, {
+      "id": "bd2f3686-7659-400c-9cad-68c13d704740",
+      "comment": "Кликнуть в поле \"Пароль\"",
+      "command": "click",
+      "target": "id=prependedInput2",
+      "targets": [
+        ["id=prependedInput2", "id"],
+        ["name=_password", "name"],
+        ["css=#prependedInput2", "css:finder"],
+        ["xpath=//input[@id='prependedInput2']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9afbdace-406e-4f53-994e-db2b1119582e",
+      "comment": "Ввести пароль Student2020!",
+      "command": "type",
+      "target": "id=prependedInput2",
+      "targets": [
+        ["id=prependedInput2", "id"],
+        ["name=_password", "name"],
+        ["css=#prependedInput2", "css:finder"],
+        ["xpath=//input[@id='prependedInput2']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Student2020!"
+    }, {
+      "id": "f9502c57-63d8-4528-9676-1072f8291142",
+      "comment": "Кликнуть на кнопку \"Войти\"",
+      "command": "click",
+      "target": "id=_submit",
+      "targets": [
+        ["id=_submit", "id"],
+        ["name=_submit", "name"],
+        ["css=#\\_submit", "css:finder"],
+        ["xpath=//button[@id='_submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/fieldset/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7ea8b39-122b-49aa-8b4a-084e668589af",
+      "comment": "Подождать появления элемента с отображением имени пользователя",
+      "command": "waitForElementVisible",
+      "target": "xpath=//li[@id='user-menu']/a",
+      "targets": [
+        ["linkText=Маслов Александр", "linkText"],
+        ["css=#user-menu > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Маслов Александр')]", "xpath:link"],
+        ["xpath=//li[@id='user-menu']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript: void(0);')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ec10a621-e361-40d6-ac71-66600e26a951",
+      "comment": "Проверить наличие элемента с именем пользователя",
+      "command": "assertElementPresent",
+      "target": "xpath=//li[@id='user-menu']/a",
+      "targets": [
+        ["linkText=Маслов Александр", "linkText"],
+        ["css=#user-menu > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Маслов Александр')]", "xpath:link"],
+        ["xpath=//li[@id='user-menu']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript: void(0);')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47a279c5-b21b-40c3-a1b5-c00669652874",
+      "comment": "Проверить соответствие имени пользователя ожидаемому",
+      "command": "assertText",
+      "target": "xpath=//li[@id='user-menu']/a",
+      "targets": [
+        ["linkText=Маслов Александр", "linkText"],
+        ["css=#user-menu > .dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Маслов Александр')]", "xpath:link"],
+        ["xpath=//li[@id='user-menu']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript: void(0);')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": "Маслов Александр"
+    }]
+  }, {
+    "id": "99e76209-2a38-49b4-a3e1-14bf904c7859",
+    "name": "Create New Cost",
+    "commands": [{
+      "id": "fe6298e1-bc37-4cf2-9315-6cf0db520e1c",
+      "comment": "Устанавливаем скорость с паузой 500 мс (0.5 с)",
+      "command": "setSpeed",
+      "target": "500",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e2ca3d18-1caf-4c87-8b8c-77cb348a76b8",
+      "comment": "Открываем главную страницу",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "856e1ccd-f8ea-491d-86bb-45da82b29ad0",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//div[@id='main-menu']/ul/li/a[@class='unclickable']/span[@class='title' and contains(text(),'Расходы')]",
+      "targets": [],
+      "value": "1000"
+    }, {
+      "id": "7dfef2b9-03e9-4658-bd8f-8a4b053084da",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "xpath=//div[@id='main-menu']/ul/li/a[@class='unclickable']/span[@class='title' and contains(text(),'Расходы')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50ade2d9-bc01-45e2-89d6-fae9758795f2",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(text(),'Заявки на расходы')]",
+      "targets": [],
+      "value": "1000"
+    }, {
+      "id": "730bb58a-ead7-4c01-8ac1-59141d7574d0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(text(),'Заявки на расходы')]",
+      "targets": [
+        ["css=.dropdown:nth-child(6) > .menu_level_1 > .first .title", "css:finder"],
+        ["xpath=//div[@id='main-menu']/ul/li[6]/ul/li[3]/a/span", "xpath:idRelative"],
+        ["xpath=//li[6]/ul/li[3]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Заявки на расходы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ae9c526-24cc-4eef-9878-435c19a6e798",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//div[@class='btn-group']//a[contains(text(),'Создать заявку на расход')]",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "3b25a4b9-ac17-445a-a382-f1138a21e851",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@class='btn-group']//a[contains(text(),'Создать заявку на расход')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "950820ba-6360-4ac9-98f4-e23365cf3f4f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//textarea[@data-name='field__description']",
+      "targets": [],
+      "value": "Покупка ноутбука"
+    }, {
+      "id": "46fd13c1-e422-4717-b3d1-41238532d663",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//select[@data-name='field__business-unit']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12cf2c80-bbf5-4342-b48a-dd43764be328",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=//select[@data-name='field__business-unit']",
+      "targets": [],
+      "value": "label=Research & Development"
+    }, {
+      "id": "223e3baa-5059-4085-982d-ccfc64942204",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//select[@data-name='field__expenditure']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d4c0617a-e5b6-4aa3-b223-91223b6e34a8",
+      "comment": "",
+      "command": "select",
+      "target": "xpath=//select[@data-name='field__expenditure']",
+      "targets": [],
+      "value": "label=01110 - ОС: вычислительная техника производственного назначения"
+    }, {
+      "id": "ad6053ba-910e-41de-af2d-223dff4d2f5c",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@data-name='field__sum-plan']",
+      "targets": [],
+      "value": "321000"
+    }, {
+      "id": "a1b6efc4-93ce-482d-b5ac-7ac8970d1ff8",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[contains(@name,'date_selector_crm_expense_request_datePlan')]",
+      "targets": [],
+      "value": "26.02.2021"
+    }, {
+      "id": "84cddf53-ac4e-4a36-a906-f229a16f2b11",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[@type='submit' and contains(text(), 'Сохранить и закрыть')]",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9e5bfa7c-15dc-43b5-89b0-ae074ae7aae1",
+    "name": "Regress",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["48e30f0a-f6b4-4ca9-ae33-858ff85a961c", "99e76209-2a38-49b4-a3e1-14bf904c7859"]
+  }],
+  "urls": ["https://crm.geekbrains.space/"],
+  "plugins": []
+}
